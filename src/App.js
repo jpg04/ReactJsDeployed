@@ -1,16 +1,16 @@
 // import logo from './logo.svg';
 import { useState } from "react";
 import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-import { Routes } from "react-router-dom";
+/* import { Routes } from "react-router-dom";
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-
+ */
 function App() {
   const [mode, setMode] = useState('light')  //whether dark mode is enabled or not
   const [alert, setAlert] = useState(null)
@@ -52,12 +52,14 @@ function App() {
 
   return (
     <>
-      {/* <Navbar />
-      <Navbar title="TextUtils" aboutText="About" /> */}
-      
-      <Router>
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert}/>
+      <TextForm heading="Enter text to analyze"  mode={mode} showAlert={showAlert} />
+
+      {/* <About /> */}
+      {/* <Navbar />
+      <Navbar title="TextUtils" aboutText="About" /> */}
+      {/* <Router>
       <div className="container my-3">
       
       <Routes>
@@ -67,8 +69,8 @@ function App() {
             </Route>
       </Routes>
 
-      </div>
-      </Router>
+    </div>
+    </Router> */}
     </>
   );
 }
